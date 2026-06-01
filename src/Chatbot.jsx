@@ -60,10 +60,13 @@ function Chatbot() {
     setLoading(true);
 
     try {
-      const res = await axios.post("http://localhost:5000/chat", {
-        message: text,
-        chat,
-      });
+      const res = await axios.post(
+        "https://chatbot-backend-633j.onrender.com/chat",
+        {
+          message: text,
+          chat,
+        },
+      );
 
       setChat((prev) => [
         ...prev,
