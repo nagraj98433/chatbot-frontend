@@ -125,7 +125,7 @@ function Chatbot() {
         </div>
 
         {/* Chat Area */}
-        <div className="flex-1 overflow-y-auto overflow-x-hidden p-6 space-y-5">
+        <div className="flex-1 overflow-y-auto overflow-x-hidden p-3 md:p-6 space-y-5">
           {chat.length === 0 && (
             <div className="text-center mt-8 md:mt-20 px-2">
               <h2 className="text-3xl md:text-5xl font-black  mb-4 bg-linear-to-r from-violet-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
@@ -167,7 +167,7 @@ function Chatbot() {
               }`}
             >
               <div
-                className={`flex gap-3 max-w-[90%] ${
+                className={`flex gap-2 w-full max-w-full ${
                   msg.sender === "user" ? "flex-row-reverse" : ""
                 }`}
               >
@@ -185,7 +185,7 @@ function Chatbot() {
                 </div>
 
                 {/* Message */}
-                <div className="relative">
+                <div className="relative flex-1 min-w-0">
                   {msg.sender === "ai" && (
                     <button
                       onClick={() => copyToClipboard(msg.text, i)}
@@ -200,7 +200,7 @@ function Chatbot() {
                   )}
 
                   <div
-                    className={`px-5 py-3 rounded-2xl break-words overflow-hidden ${
+                    className={`px-4 md:px-5 py-3 rounded-2xl wrap-break-word overflow-hidden max-w-full ${
                       msg.sender === "user"
                         ? "bg-indigo-600 text-white"
                         : "bg-white/15 text-white"
