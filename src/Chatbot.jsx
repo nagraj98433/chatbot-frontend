@@ -173,7 +173,7 @@ function Chatbot() {
               >
                 {/* Avatar */}
                 <div
-                  className={`w-10 h-10 rounded-full flex items-center justify-center ${
+                  className={`hidden md:flex w-10 h-10 rounded-full items-center justify-center ${
                     msg.sender === "user" ? "bg-indigo-500" : "bg-purple-500"
                   }`}
                 >
