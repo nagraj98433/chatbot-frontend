@@ -90,17 +90,17 @@ function Chatbot() {
 
   return (
     <div className="min-h-screen bg-linear-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center p-4">
-      <div className="w-full max-w-4xl h-[85vh] backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl shadow-2xl overflow-hidden flex flex-col">
+      <div className="w-full max-w-4xl h-[95vh] md:h-[85vh] backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl shadow-2xl overflow-hidden flex flex-col">
         {/* Header */}
 
-        <div className="flex items-center gap-3 px-6 py-4 border-b border-white/10 bg-white/5">
+        <div className="flex items-start sm:items-center gap-3 px-4 md:px-6 py-4 border-b border-white/10 bg-white/5">
           <div className="w-12 h-12 rounded-full bg-linear-to-r from-violet-500 to-pink-500 flex items-center justify-center">
             <Bot size={24} className="text-white" />
           </div>
 
-          <div className="flex-1 flex items-center justify-between">
+          <div className="flex-1 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
             <div>
-              <h1 className="text-2xl font-extrabold bg-linear-to-r from-violet-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent ">
+              <h1 className="text-lg md:text-2xl font-extrabold bg-linear-to-r from-violet-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent ">
                 Nagraj AI ✨
               </h1>
 
@@ -115,11 +115,7 @@ function Chatbot() {
                 setChat([]);
                 localStorage.removeItem("chatHistory");
               }}
-              className="flex items-center gap-2 px-4 py-2
-  bg-red-500/20 border border-red-500/30
-  text-red-300 rounded-xl
-  hover:bg-red-500 hover:text-white
-  transition-all duration-300 cursor-pointer"
+              className="self-start sm:self-auto flex items-center gap-2 px-3 py-2 text-sm bg-red-500/20 border border-red-500/30 text-red-300 rounded-xl hover:bg-red-500 hover:text-white transition-all duration-300 cursor-pointer"
             >
               <Trash2 size={16} />
               Clear Chat
@@ -131,12 +127,12 @@ function Chatbot() {
         {/* Chat Area */}
         <div className="flex-1 overflow-y-auto overflow-x-hidden p-6 space-y-5">
           {chat.length === 0 && (
-            <div className="text-center mt-20">
-              <h2 className="text-5xl font-black mb-4 bg-linear-to-r from-violet-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
+            <div className="text-center mt-8 md:mt-20 px-2">
+              <h2 className="text-3xl md:text-5xl font-black  mb-4 bg-linear-to-r from-violet-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
                 Welcome to Nagraj AI ✨
               </h2>
 
-              <p className="text-lg text-slate-300 max-w-md mx-auto">
+              <p className="text-base md:text-lg text-slate-300 max-w-md mx-auto">
                 Your personal AI assistant for coding, learning, debugging, and
                 exploring ideas.
               </p>
@@ -204,7 +200,7 @@ function Chatbot() {
                   )}
 
                   <div
-                    className={`px-5 py-3 rounded-2xl wrap-break-word overflow-hidden ${
+                    className={`px-5 py-3 rounded-2xl break-words overflow-hidden ${
                       msg.sender === "user"
                         ? "bg-indigo-600 text-white"
                         : "bg-white/15 text-white"
